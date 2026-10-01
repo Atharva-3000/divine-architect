@@ -59,8 +59,8 @@ export default function Hero() {
           Divine Architects
         </h1>
         
-        {/* Subtitle - Original stacking restored */}
-        <p className="text-[16px] md:text-[22px] font-normal leading-[1.4] md:leading-[1.6] text-white/90 mt-2 mb-6 max-w-[320px] md:max-w-[600px] text-center md:text-left">
+        {/* Subtitle */}
+        <p className="text-[14px] md:text-[17px] font-normal leading-[1.4] md:leading-[1.6] text-white/90 mt-2 mb-6 max-w-[320px] md:max-w-full text-center md:text-left whitespace-normal md:whitespace-nowrap">
           Redefining Luxury, Meaningfully Yours. We Design Spaces That Make The Status Quo.
         </p>
 
