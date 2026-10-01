@@ -86,18 +86,17 @@ export default function Hero() {
       </div>
 
       {/* STATS BOXES */}
-      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 px-0 text-center pointer-events-none">
+      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 px-4 md:px-0 text-center pointer-events-none">
         {[
           { number: "10+", text: "Years of working" },
           { number: "90%", text: "Satisfaction Rate" },
           { number: "24+", text: "National Projects" },
         ].map((stat, i) => (
-          <div key={i} className="flex-1 w-full bg-white/5 backdrop-blur-md border-t border-l border-white/20 border-r border-b border-white/5 rounded-[12px] md:rounded-[16px] py-4 md:py-6 flex flex-col items-center justify-center text-white shadow-lg relative overflow-hidden group pointer-events-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <h3 className="relative z-10 font-general font-bold text-[38px] md:text-[3.5rem] lg:text-[4rem] leading-none mb-1 md:mb-2 drop-shadow-md">
+          <div key={i} className="flex-1 w-full bg-white/10 backdrop-blur-md border border-white/30 rounded-[12px] md:rounded-[20px] py-5 md:py-8 flex flex-col items-center justify-center text-white shadow-2xl relative overflow-hidden pointer-events-auto transition-all hover:bg-white/20">
+            <h3 className="relative z-10 font-general font-medium text-[42px] md:text-[3.5rem] lg:text-[4.5rem] leading-none mb-1 md:mb-2">
               {stat.number}
             </h3>
-            <p className="relative z-10 font-sans text-[9px] md:text-sm text-white/95 font-medium uppercase tracking-[0.15em] drop-shadow-sm">
+            <p className="relative z-10 font-sans text-[13px] md:text-[15px] lg:text-[17px] text-white/95 font-normal tracking-wide">
               {stat.text}
             </p>
           </div>
