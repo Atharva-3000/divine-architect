@@ -99,12 +99,12 @@ export default function Hero() {
           { number: "90%", text: "Satisfaction Rate" },
           { number: "24+", text: "National Projects" },
         ].map((stat, i) => (
-          <div key={i} className="flex-1 w-full bg-white/10 backdrop-blur-2xl border-t border-l border-white/40 border-r border-b border-white/10 rounded-[12px] md:rounded-[16px] py-4 md:py-10 flex flex-col items-center justify-center text-white shadow-[0_8px_32px_rgba(0,0,0,0.1)] relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <h3 className="relative z-10 font-general font-bold text-[38px] md:text-[4.5rem] lg:text-[5.5rem] leading-none mb-1 md:mb-3 drop-shadow-md">
+          <div key={i} className="flex-1 w-full bg-white/5 backdrop-blur-md border-t border-l border-white/20 border-r border-b border-white/5 rounded-[12px] md:rounded-[16px] py-4 md:py-5 flex flex-col items-center justify-center text-white shadow-[0_4px_30px_rgba(0,0,0,0.1)] relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            <h3 className="relative z-10 font-general font-bold text-[38px] md:text-[2.5rem] lg:text-[3rem] leading-none mb-1 md:mb-2 drop-shadow-md">
               {stat.number}
             </h3>
-            <p className="relative z-10 font-sans text-[9px] md:text-sm text-white/95 font-semibold uppercase tracking-[0.15em] md:tracking-[0.2em] drop-shadow-sm">
+            <p className="relative z-10 font-sans text-[9px] md:text-xs text-white/95 font-semibold uppercase tracking-[0.15em] md:tracking-[0.2em] drop-shadow-sm">
               {stat.text}
             </p>
           </div>
