@@ -26,7 +26,6 @@ export default function Hero() {
 
     if (skyRef.current) tl.to(skyRef.current, { y: 150, ease: "none" }, 0);
     if (textRef.current) tl.to(textRef.current, { y: 80, ease: "none" }, 0);
-    // Parallax completely removed for the building. 
     
     return () => {
       tl.kill();
@@ -45,7 +44,7 @@ export default function Hero() {
         priority
       />
 
-      {/* TEXT LAYER - Restored perfectly to original desktop layout, centered on mobile */}
+      {/* TEXT LAYER */}
       <div ref={textRef} className="relative z-10 text-white w-full max-w-[1400px] px-4 md:px-6 mx-auto flex flex-col items-center md:items-start">
         
         {/* Top small text */}
@@ -54,26 +53,26 @@ export default function Hero() {
           <p className="tracking-wide hidden md:block">Based In Jaipur, Rajasthan</p>
         </div>
         
-        {/* Main Title - Original scale and wrap restored */}
+        {/* Main Title */}
         <h1 className="font-general font-bold text-[4.5rem] sm:text-[5.5rem] md:text-[clamp(6rem,11.5vw,13rem)] leading-[1.05] tracking-tight text-center md:text-left w-full whitespace-normal md:whitespace-nowrap">
           Divine Architects
         </h1>
         
         {/* Subtitle */}
-        <p className="text-[14px] md:text-[17px] font-normal leading-[1.4] md:leading-[1.6] text-white/90 mt-2 mb-6 max-w-[320px] md:max-w-full text-center md:text-left whitespace-normal md:whitespace-nowrap">
+        <p className="text-[14px] md:text-[17px] font-normal leading-[1.4] md:leading-[1.6] text-white/90 mt-2 mb-8 max-w-[320px] md:max-w-full text-center md:text-left whitespace-normal md:whitespace-nowrap">
           Redefining Luxury, Meaningfully Yours. We Design Spaces That Make The Status Quo.
         </p>
 
-        {/* Button - Original placement restored */}
-        <Link href="/contact" className="relative w-[198px] h-[40px] md:h-[48px] bg-white text-dark rounded-[7px] flex items-center hover:opacity-90 transition-opacity shrink-0 shadow-lg">
-          <span className="w-full flex items-center justify-center text-[16px] font-semibold pr-8">Start Your Project</span>
-          <span className="absolute right-[4px] w-[32px] md:w-[36px] h-[32px] md:h-[40px] bg-primary text-white rounded-[4px] flex items-center justify-center shrink-0">
+        {/* Button - Refactored to use inline-flex with padding instead of hardcoded width */}
+        <Link href="/contact" className="relative inline-flex items-center justify-between bg-white text-dark rounded-[10px] pl-6 pr-2 py-1.5 md:py-2 hover:shadow-xl transition-all shadow-lg group">
+          <span className="text-[15px] md:text-[16px] font-semibold mr-4 md:mr-8 whitespace-nowrap">Start Your Project</span>
+          <span className="w-[34px] h-[34px] md:w-[42px] md:h-[42px] bg-primary text-white rounded-[6px] flex items-center justify-center shrink-0 transition-transform group-hover:translate-x-0.5">
             <ChevronsRight size={18} strokeWidth={2.5} />
           </span>
         </Link>
       </div>
 
-      {/* HOUSE LAYER - Restored original proportions and overlap */}
+      {/* HOUSE LAYER */}
       <div className="absolute inset-x-0 bottom-0 top-[35%] md:top-[15%] z-20 pointer-events-none flex justify-center items-end">
         <div className="relative w-[190%] sm:w-[150%] md:w-full h-full max-w-[1800px] md:translate-y-12">
           <Image
@@ -86,7 +85,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* STATS BOXES - Restored original glass thickness and layout */}
+      {/* STATS BOXES */}
       <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 px-0 text-center pointer-events-none">
         {[
           { number: "10+", text: "Years of working" },
