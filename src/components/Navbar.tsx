@@ -36,13 +36,13 @@ export default function Navbar({ forceSolid = false }: { forceSolid?: boolean })
 
   return (
     <>
-      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+      <header className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 flex justify-center ${
         scrolled ? 'py-2 md:py-4' : 'py-4 md:py-6'
       }`}>
-        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 pointer-events-none">
+        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-6 pointer-events-none flex justify-center">
         
         {/* Navbar Container - Thinner height */}
-        <nav className={`pointer-events-auto backdrop-blur-md border rounded-[12px] pl-5 md:pl-6 pr-1 md:pr-1.5 flex items-center justify-between shadow-lg transition-all duration-300 w-full ${
+        <nav className={`pointer-events-auto backdrop-blur-md border rounded-[12px] pl-5 md:pl-6 pr-1 md:pr-1.5 flex items-center justify-between shadow-lg transition-all duration-300 w-full md:w-auto ${
           scrolled 
             ? 'bg-white/95 border-gray-200 shadow-md py-1.5 md:py-2' 
             : 'bg-white/10 border-white/20 py-1.5 md:py-2'
