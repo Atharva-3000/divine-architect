@@ -26,6 +26,7 @@ export default function Hero() {
 
     if (skyRef.current) tl.to(skyRef.current, { y: 150, ease: "none" }, 0);
     if (textRef.current) tl.to(textRef.current, { y: 80, ease: "none" }, 0);
+    // Parallax completely removed for the building. 
     
     return () => {
       tl.kill();
@@ -44,40 +45,37 @@ export default function Hero() {
         priority
       />
 
-      {/* Middle Text Layer */}
-      <div ref={textRef} className="relative z-10 text-white px-4 md:px-8 w-full max-w-[95vw] md:max-w-[90vw] mx-auto flex flex-col items-center">
+      {/* TEXT LAYER - Restored perfectly to original desktop layout, centered on mobile */}
+      <div ref={textRef} className="relative z-10 text-white w-full max-w-[1400px] px-4 md:px-6 mx-auto flex flex-col items-center md:items-start">
         
-        {/* Title Container to keep edges aligned */}
-        <div className="w-full md:w-max flex flex-col max-w-full items-center md:items-start">
-          {/* Top small text */}
-          <div className="flex justify-center md:justify-between items-end w-full text-[12px] md:text-sm font-medium mb-2 px-1 text-center md:text-left">
-            <p className="tracking-wide w-full md:w-auto text-white/90">Redefining Spaces, Elevating Lifestyle</p>
-            <p className="tracking-wide hidden md:block">Based In Jaipur, Rajasthan</p>
-          </div>
-          
-          {/* Main Title - Original massive sizing restored with proper wrap safety */}
-          <h1 className="font-general font-bold text-[clamp(3.5rem,10.5vw,13rem)] leading-[1] md:leading-[1.1] tracking-tight text-center md:whitespace-nowrap mb-4 md:mb-0">
-            Divine Architects
-          </h1>
-          
-          {/* Bottom text and button */}
-          <div className="text-center md:text-left mt-0 md:mt-2 px-1 w-full flex flex-col items-center md:items-start">
-            <p className="text-[16px] md:text-[22px] font-normal leading-[1.4] md:leading-[27px] mb-6 text-white/90 max-w-[320px] md:max-w-none mx-auto md:mx-0">
-              Redefining Luxury, Meaningfully Yours. We Design Spaces That Make The Status Quo.
-            </p>
-            <Link href="/contact" className="relative w-[198px] h-[40px] bg-white text-dark rounded-[7px] flex items-center hover:opacity-90 transition-opacity mx-auto md:mx-0">
-              <span className="w-[162px] flex items-center justify-center text-[16px] font-semibold">Start Your Project</span>
-              <span className="absolute right-[4px] w-[32px] h-[32px] bg-primary text-white rounded-[4px] flex items-center justify-center shrink-0">
-                <ChevronsRight size={16} strokeWidth={2.5} />
-              </span>
-            </Link>
-          </div>
+        {/* Top small text */}
+        <div className="flex justify-center md:justify-between items-end w-full text-[12px] md:text-sm font-medium mb-2">
+          <p className="tracking-wide text-white/90">Redefining Spaces, Elevating Lifestyle</p>
+          <p className="tracking-wide hidden md:block">Based In Jaipur, Rajasthan</p>
         </div>
+        
+        {/* Main Title - Original scale and wrap restored */}
+        <h1 className="font-general font-bold text-[4.5rem] sm:text-[5.5rem] md:text-[clamp(6rem,11.5vw,13rem)] leading-[1.05] tracking-tight text-center md:text-left w-full whitespace-normal md:whitespace-nowrap">
+          Divine Architects
+        </h1>
+        
+        {/* Subtitle - Original stacking restored */}
+        <p className="text-[16px] md:text-[22px] font-normal leading-[1.4] md:leading-[1.6] text-white/90 mt-2 mb-6 max-w-[320px] md:max-w-[600px] text-center md:text-left">
+          Redefining Luxury, Meaningfully Yours. We Design Spaces That Make The Status Quo.
+        </p>
+
+        {/* Button - Original placement restored */}
+        <Link href="/contact" className="relative w-[198px] h-[40px] md:h-[48px] bg-white text-dark rounded-[7px] flex items-center hover:opacity-90 transition-opacity shrink-0 shadow-lg">
+          <span className="w-full flex items-center justify-center text-[16px] font-semibold pr-8">Start Your Project</span>
+          <span className="absolute right-[4px] w-[32px] md:w-[36px] h-[32px] md:h-[40px] bg-primary text-white rounded-[4px] flex items-center justify-center shrink-0">
+            <ChevronsRight size={18} strokeWidth={2.5} />
+          </span>
+        </Link>
       </div>
 
-      {/* Foreground Building Layer - Strictly grounded to bottom-0, high z-index overlaps text */}
-      <div className="absolute inset-x-0 bottom-0 top-[25%] md:top-[15%] z-20 pointer-events-none flex justify-center items-end">
-        <div className="relative w-[190%] sm:w-[150%] md:w-[110%] h-[110%] max-w-[1800px] md:translate-y-20">
+      {/* HOUSE LAYER - Restored original proportions and overlap */}
+      <div className="absolute inset-x-0 bottom-0 top-[35%] md:top-[15%] z-20 pointer-events-none flex justify-center items-end">
+        <div className="relative w-[190%] sm:w-[150%] md:w-full h-full max-w-[1800px] md:translate-y-12">
           <Image
             src="/assets/hero-building-home.png"
             alt="Modern Building"
@@ -88,19 +86,19 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Stats Overlay - Original ultra-thin styling restored */}
-      <div className="absolute bottom-16 md:bottom-[15vh] left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 px-0 md:px-4 text-center pointer-events-none">
+      {/* STATS BOXES - Restored original glass thickness and layout */}
+      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 px-0 text-center pointer-events-none">
         {[
           { number: "10+", text: "Years of working" },
           { number: "90%", text: "Satisfaction Rate" },
           { number: "24+", text: "National Projects" },
         ].map((stat, i) => (
-          <div key={i} className="flex-1 w-full bg-white/5 backdrop-blur-md border-t border-l border-white/20 border-r border-b border-white/5 rounded-[12px] md:rounded-[16px] py-4 md:py-5 flex flex-col items-center justify-center text-white shadow-[0_4px_30px_rgba(0,0,0,0.1)] relative overflow-hidden group pointer-events-auto">
+          <div key={i} className="flex-1 w-full bg-white/5 backdrop-blur-md border-t border-l border-white/20 border-r border-b border-white/5 rounded-[12px] md:rounded-[16px] py-4 md:py-6 flex flex-col items-center justify-center text-white shadow-lg relative overflow-hidden group pointer-events-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <h3 className="relative z-10 font-general font-bold text-[38px] md:text-[3.5rem] lg:text-[4rem] leading-none mb-1 md:mb-2 drop-shadow-md">
               {stat.number}
             </h3>
-            <p className="relative z-10 font-sans text-[9px] md:text-xs text-white/95 font-semibold uppercase tracking-[0.15em] md:tracking-[0.2em] drop-shadow-sm">
+            <p className="relative z-10 font-sans text-[9px] md:text-sm text-white/95 font-medium uppercase tracking-[0.15em] drop-shadow-sm">
               {stat.text}
             </p>
           </div>
