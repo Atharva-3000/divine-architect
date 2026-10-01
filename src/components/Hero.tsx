@@ -86,17 +86,17 @@ export default function Hero() {
       </div>
 
       {/* STATS BOXES */}
-      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8 px-4 md:px-0 text-center pointer-events-none">
+      <div className="absolute bottom-16 md:bottom-12 left-1/2 -translate-x-1/2 w-[220px] sm:w-[60%] md:w-full max-w-[65rem] z-30 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-6 px-4 md:px-0 text-center pointer-events-none">
         {[
           { number: "10+", text: "Years of working" },
           { number: "90%", text: "Satisfaction Rate" },
           { number: "24+", text: "National Projects" },
         ].map((stat, i) => (
-          <div key={i} className="flex-1 w-full bg-white/10 backdrop-blur-md border border-white/30 rounded-[12px] md:rounded-[20px] py-5 md:py-8 flex flex-col items-center justify-center text-white shadow-2xl relative overflow-hidden pointer-events-auto transition-all hover:bg-white/20">
-            <h3 className="relative z-10 font-general font-medium text-[42px] md:text-[3.5rem] lg:text-[4.5rem] leading-none mb-1 md:mb-2">
+          <div key={i} className="flex-1 w-full bg-white/10 backdrop-blur-md border border-white/40 rounded-[12px] md:rounded-[16px] py-4 md:py-5 flex flex-col items-center justify-center text-white shadow-xl relative overflow-hidden pointer-events-auto transition-all hover:bg-white/20">
+            <h3 className="relative z-10 font-sans font-medium text-[36px] md:text-[40px] lg:text-[44px] leading-none mb-1">
               {stat.number}
             </h3>
-            <p className="relative z-10 font-sans text-[13px] md:text-[15px] lg:text-[17px] text-white/95 font-normal tracking-wide">
+            <p className="relative z-10 font-sans text-[13px] md:text-[15px] text-white/90 font-normal">
               {stat.text}
             </p>
           </div>
